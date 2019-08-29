@@ -1,0 +1,63 @@
+﻿using Models;
+using Models.RepositoryResults;
+using Models.Tables;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using UnitsOfWork;
+
+namespace Service
+{
+
+    public class CustomerService : ICustomerService
+    {
+        private readonly IUnitOfWork _unitOfWork;
+        public CustomerService(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
+        public Customer GetCustomer(string userId)
+        {
+            var customerId = _unitOfWork.UserRepository.All().Single(u => u.Id == userId).Customer_Id;
+            return _unitOfWork.CustomerRepository.All().Single(c => c.Id == customerId);
+        }
+
+        public CustomerResult CreateCustomer(FrontCustomer frontCustomer, string userId)
+        {
+            CustomerResult result = new CustomerResult();
+            Customer customer = new Customer()
+            {
+                Name = frontCustomer.Name,
+                Address = frontCustomer.Address,
+                Code = "0"
+            };
+
+            _unitOfWork.CustomerRepository.Add(customer);
+            _unitOfWork.Commit();
+            var customerId = _unitOfWork.CustomerRepository.All().Last().Id;
+            customer.Code = string.Format("{0:0000}", customer.Id) + "-" + DateTime.Now.Year.ToString();
+            _unitOfWork.CustomerRepository.Update(customer);
+            var user = _unitOfWork.UserRepository.All().Single(u => u.Id == userId);
+            user.Customer_Id = customer.Id;
+            _unitOfWork.UserRepository.Update(user);
+            _unitOfWork.Commit();
+            result.succeeded = true;
+            return result;
+        }
+
+        public int GetDiscount(string userId)
+        {
+
+            var customerId = _unitOfWork.UserRepository.All().Single(u => u.Id == userId).Customer_Id;
+
+            return _unitOfWork.CustomerRepository.All().SingleOrDefault(c => c.Id == customerId)?.Discount ?? 0;
+
+        }
+
+    }
+
+}
+

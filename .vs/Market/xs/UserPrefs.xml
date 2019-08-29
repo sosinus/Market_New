@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{F34E85F5-54A1-4342-8E24-26FF560BD082}|Default">
+  <MonoDevelop.Ide.ItemProperties.Market PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Market/appsettings.json">
+    <Files>
+      <File FileName="Market/appsettings.json" Line="9" Column="5" />
+      <File FileName="Repositories/UMRepository.cs" />
+      <File FileName="Models/Registration/AppUser.cs" />
+      <File FileName="Repositories/OrderRepository.cs" />
+      <File FileName="Market/Controllers/UserController.cs" />
+      <File FileName="Market/Controllers/AuthController.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Market" expanded="True">
+            <Node name="Market" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="appsettings.json" selected="True" />
+            </Node>
+            <Node name="Models" expanded="True" />
+            <Node name="Repositories" expanded="True" />
+            <Node name="UnitsOfWork" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
