@@ -52,3 +52,9 @@ C:\Users\User\Desktop\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.A
 C:\Users\User\Desktop\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.csproj.CopyComplete
 C:\Users\User\Desktop\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.dll
 C:\Users\User\Desktop\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.pdb
+D:\Desktop\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.csprojAssemblyReference.cache
+D:\Desktop\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.csproj.CoreCompileInputs.cache
+D:\Desktop\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.AssemblyInfoInputs.cache
+D:\Desktop\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.AssemblyInfo.cs
+D:\Desktop\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.dll
+D:\Desktop\Market\Repositories\obj\Debug\netcoreapp2.2\Repositories.pdb

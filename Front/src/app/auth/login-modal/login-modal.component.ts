@@ -3,7 +3,7 @@ import { ApiService } from 'src/app/api.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
-import { GetJwtResult } from 'src/app/models/results';
+import { OperationResult } from 'src/app/models/operationResult';
 
 @Component({
   selector: 'app-login-modal',
@@ -32,9 +32,9 @@ export class LoginModalComponent implements OnInit {
     if (form.valid) {
       this.apiService.login(form.value)
         .toPromise()
-        .then((res: GetJwtResult) => {
-          if (res.success) {
-            localStorage.setItem('token', res.token);
+        .then((res: OperationResult) => {
+          if (res.succeeded) {
+            localStorage.setItem('token', String(res.data));
             this.closeModal.nativeElement.click()
             var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]))
             var userRole = payLoad.role
@@ -43,7 +43,8 @@ export class LoginModalComponent implements OnInit {
             this.onChanged.emit()
             form.resetForm()
             this.message = ""
-            this.login = true
+            this.login = true 
+            this.apiService.getDiscount()           
           }
           else
             this.message = "Неправильное имя пользователя или пароль"

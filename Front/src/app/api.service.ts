@@ -11,7 +11,7 @@ import { OrderItem } from './models/orderItem';
 import { Customer } from './models/customer';
 import { flatMap } from 'rxjs/operators';
 import { Order } from './models/order';
-import { AddOrderResult } from './models/results';
+import { OperationResult } from './models/operationResult';
 
 @Injectable({
   providedIn: 'root'
@@ -92,7 +92,7 @@ export class ApiService {
   }
 
   postCustomer() {
-    return this.http.post(this.apiURI + 'Auth/Customer', this.currentCustomer)
+    return this.http.post(this.apiURI + 'Customer', this.currentCustomer)
   }
 
   getCurrentCustomer() {
@@ -100,17 +100,20 @@ export class ApiService {
   }
 
   applyOrder() {
-    this.http.post(this.apiURI + "Order", this.cart).toPromise()
-      .then((res: AddOrderResult) => {
-        if (res.success)
-          this.makeAlert("Ваш заказ успешно оформлен!")
-        else
-          this.makeAlert("Не удалось добавить заказ")
-      },
-        err =>
-          this.makeAlert("Не удалось добавить заказ")
-      )
-    this.cart = new Array<OrderItem>()
+    if (this.cart.length > 0) {
+      this.http.post(this.apiURI + "Order", this.cart).toPromise()
+        .then((res: OperationResult) => {
+          if (res.succeeded)
+            this.makeAlert("Ваш заказ успешно оформлен!")
+          else
+            this.makeAlert("Не удалось добавить заказ")
+        },
+          err =>
+            this.makeAlert("Не удалось добавить заказ")
+        )
+      this.cart = new Array<OrderItem>()
+    }
+
   }
 
   getUsers() {
@@ -124,12 +127,12 @@ export class ApiService {
       })
   }
 
-  async getDiscount(){
+  async getDiscount() {
     let discount;
-   await this.http.get(this.apiURI + "Customer/GetDiscount")
-    .toPromise()
-    .then((res:any)=>discount = res)
-   return discount
+    await this.http.get(this.apiURI + "Customer/GetDiscount")
+      .toPromise()
+      .then((res: any) => discount = res)
+    return discount
   }
   //--------Item Managment----------------
   postItem() {
@@ -169,8 +172,8 @@ export class ApiService {
 
     this.http.delete(this.apiURI + 'images/deleteOne/' + imgName)
       .toPromise()
-      .then((res) => {
-        imgPathes = Object(res).imgPathes
+      .then((res: OperationResult) => {
+        imgPathes = Object(res).data
         imgPathes.forEach((img, index) => {
           imgPathes[index] = this.forImagesApiURI + img
         });
@@ -183,8 +186,8 @@ export class ApiService {
     let imgPathes: string[]
     this.http.get(this.apiURI + 'images/' + this.editItem.id)
       .toPromise()
-      .then((res) => {
-        imgPathes = res as string[]
+      .then((res: OperationResult) => {
+        imgPathes = res.data as string[]
         if (imgPathes != null) {
           imgPathes.forEach((img, index) => {
             imgPathes[index] = this.forImagesApiURI + img
@@ -198,8 +201,8 @@ export class ApiService {
     let imgPathes: string[]
     this.http.get(this.apiURI + 'images/ForEdit/' + this.editItem.id)
       .toPromise()
-      .then((res) => {
-        imgPathes = res as string[]
+      .then((res: OperationResult) => {
+        imgPathes = res.data as string[]
         if (imgPathes != null) {
           imgPathes.forEach((img, index) => {
             imgPathes[index] = this.forImagesApiURI + img

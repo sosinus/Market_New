@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from './api.service';
-import { LoadPageResult } from './models/results';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +16,9 @@ export class AppComponent {
  ngOnInit() {
   this.http.get(this.apiService.apiURI + "Auth")
     .toPromise()
-    .then((res: LoadPageResult) => {
-      this.hasDefaultUser = res.hasDefaultUser
+    .then((res: boolean) => {
+      this.hasDefaultUser = res
+      console.log(res)
     })
 }
 

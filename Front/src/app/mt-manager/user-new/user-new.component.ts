@@ -3,8 +3,8 @@ import { User } from 'src/app/models/user';
 import { HttpClient } from '@angular/common/http';
 import { Customer } from 'src/app/models/customer';
 import { NgForm } from '@angular/forms';
-import { CreateUserResult } from 'src/app/models/results';
 import { ApiService } from 'src/app/api.service';
+import { OperationResult } from 'src/app/models/operationResult';
 
 @Component({
   selector: 'app-user-new',
@@ -31,8 +31,8 @@ export class UserNewComponent implements OnInit {
     if (form.valid) {
       this.http.post(this.apiService.apiURI + "User", form.value)      
         .toPromise()
-        .then((res: CreateUserResult) => {
-          if (res.success) {
+        .then((res: OperationResult) => {
+          if (res.succeeded) {
             this.closeBtn.nativeElement.click()
             this.apiService.getUsers()
           }

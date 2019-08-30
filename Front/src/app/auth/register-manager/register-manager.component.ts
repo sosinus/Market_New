@@ -3,7 +3,7 @@ import { ApiService } from 'src/app/api.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { CreateUserResult } from 'src/app/models/results';
+import { OperationResult } from 'src/app/models/operationResult';
 
 
 @Component({
@@ -20,8 +20,8 @@ export class RegisterManagerComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.http.post(this.apiService.apiURI + "Auth/CreateManager", form.value)
-      .subscribe((res: CreateUserResult) => {
-        if (res.success) {
+      .subscribe((res: OperationResult) => {
+        if (res.data!=null) {
           form.reset()
           this.apiService.hideAlert = false
           location.href = 'manager-panel'

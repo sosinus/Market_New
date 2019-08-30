@@ -1,20 +1,17 @@
-﻿using Models.Registration;
-using Models.RepositoryResults;
-using Models.Tables;
-using System;
+﻿using Models;
+using Models.Registration;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Service
 {
-   public interface IUserService
-    {
-        List<AppUser> GetAllUsers();
+	public interface IUserService
+	{
+		List<AppUser> GetAllUsers();
 
-        UserResult UpdateUser(AppUser user);
+		OperationResult UpdateUser(AppUser user);
 
-        CreateUserResult CreateUser(LoginRegisterModel loginRegisterModel, string Role);
+		OperationResult CreateUser(LoginRegisterModel loginRegisterModel, string Role);
 
-        UserResult DeleteUser(string userId);
-    }
+		OperationResult DeleteUser(string userId);
+	}
 }

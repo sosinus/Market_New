@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
-import { ItemResult } from 'src/app/models/results';
+import { OperationResult } from 'src/app/models/operationResult';
 
 @Component({
   selector: 'app-item-edit',
@@ -21,8 +21,8 @@ export class ItemEditComponent implements OnInit {
       this.apiService.updateItem()
         .toPromise()
         .then(
-          (res: ItemResult) => {
-            if (res.success)
+          (res: OperationResult) => {
+            if (res.succeeded)
               this.closeBtn.nativeElement.click()
             else
               this.apiService.makeAlert("Не удалось обновить товар")
@@ -35,8 +35,8 @@ export class ItemEditComponent implements OnInit {
   onDelete() {
     this.apiService.deleteItem()
       .toPromise()
-      .then((res: ItemResult) => {
-        if (res.success)
+      .then((res: OperationResult) => {
+        if (res.succeeded)
           this.closeBtn.nativeElement.click()
         else
           this.apiService.makeAlert("Не удалось обновить товар")

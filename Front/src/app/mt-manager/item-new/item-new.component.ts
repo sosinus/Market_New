@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 import { ViewChild, ElementRef } from '@angular/core';
-import { ItemResult } from 'src/app/models/results';
+import { OperationResult } from 'src/app/models/operationResult';
 
 
 
@@ -28,8 +28,8 @@ export class ItemNewComponent implements OnInit {
       await this.apiService.postItem().
         toPromise()
         .then(
-          (res: ItemResult) => {
-            if (res.success) {
+          (res: OperationResult) => {
+            if (res.succeeded) {
               this.closeBtn.nativeElement.click()
               this.apiService.getItems()
             }

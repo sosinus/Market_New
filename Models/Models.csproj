@@ -21,9 +21,6 @@
     <PackageReference Include="IdentityCore" Version="2.0.2" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="RepositoryResults\" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Remove="Resources.resx" />
   </ItemGroup>
 </Project>

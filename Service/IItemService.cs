@@ -1,16 +1,14 @@
-﻿using Models.RepositoryResults;
+﻿using Models;
 using Models.Tables;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Service
 {
-    public interface IItemService
-    {
-        List<Item> GetAllItems();
-        ItemResult AddNewItem(Item item, string userId);
-        ItemResult DeleteItem(int id);
-        ItemResult UpdateItem(Item item, string userId);
-    }
+	public interface IItemService
+	{
+		List<Item> GetAllItems();
+		OperationResult AddNewItem(Item item, string userId);
+		OperationResult DeleteItem(int id);
+		OperationResult UpdateItem(Item item, string userId);
+	}
 }

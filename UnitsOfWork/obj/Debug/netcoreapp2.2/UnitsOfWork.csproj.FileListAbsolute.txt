@@ -74,3 +74,17 @@ C:\Users\User\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.Ass
 C:\Users\User\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.csproj.CopyComplete
 C:\Users\User\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.dll
 C:\Users\User\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.pdb
+D:\Desktop\Market\UnitsOfWork\bin\Debug\netcoreapp2.2\UnitsOfWork.deps.json
+D:\Desktop\Market\UnitsOfWork\bin\Debug\netcoreapp2.2\UnitsOfWork.dll
+D:\Desktop\Market\UnitsOfWork\bin\Debug\netcoreapp2.2\UnitsOfWork.pdb
+D:\Desktop\Market\UnitsOfWork\bin\Debug\netcoreapp2.2\Models.dll
+D:\Desktop\Market\UnitsOfWork\bin\Debug\netcoreapp2.2\Repositories.dll
+D:\Desktop\Market\UnitsOfWork\bin\Debug\netcoreapp2.2\Repositories.pdb
+D:\Desktop\Market\UnitsOfWork\bin\Debug\netcoreapp2.2\Models.pdb
+D:\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.csprojAssemblyReference.cache
+D:\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.csproj.CoreCompileInputs.cache
+D:\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.AssemblyInfoInputs.cache
+D:\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.AssemblyInfo.cs
+D:\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.csproj.CopyComplete
+D:\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.dll
+D:\Desktop\Market\UnitsOfWork\obj\Debug\netcoreapp2.2\UnitsOfWork.pdb

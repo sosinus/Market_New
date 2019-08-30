@@ -13330,9 +13330,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Market\\Service\\Service.csproj",
-      "projectName": "Service",
-      "projectPath": "C:\\Users\\User\\Desktop\\Market\\Service\\Service.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Market\\Service\\Services.csproj",
+      "projectName": "Services",
+      "projectPath": "C:\\Users\\User\\Desktop\\Market\\Service\\Services.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\User\\Desktop\\Market\\Service\\obj\\",
       "projectStyle": "PackageReference",

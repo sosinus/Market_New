@@ -51,3 +51,12 @@ C:\Users\User\Desktop\Market\Models\obj\Debug\netcoreapp2.2\Models.AssemblyInfoI
 C:\Users\User\Desktop\Market\Models\obj\Debug\netcoreapp2.2\Models.AssemblyInfo.cs
 C:\Users\User\Desktop\Market\Models\obj\Debug\netcoreapp2.2\Models.dll
 C:\Users\User\Desktop\Market\Models\obj\Debug\netcoreapp2.2\Models.pdb
+D:\Desktop\Market\Models\bin\Debug\netcoreapp2.2\Models.deps.json
+D:\Desktop\Market\Models\bin\Debug\netcoreapp2.2\Models.dll
+D:\Desktop\Market\Models\bin\Debug\netcoreapp2.2\Models.pdb
+D:\Desktop\Market\Models\obj\Debug\netcoreapp2.2\Models.csprojAssemblyReference.cache
+D:\Desktop\Market\Models\obj\Debug\netcoreapp2.2\Models.csproj.CoreCompileInputs.cache
+D:\Desktop\Market\Models\obj\Debug\netcoreapp2.2\Models.AssemblyInfoInputs.cache
+D:\Desktop\Market\Models\obj\Debug\netcoreapp2.2\Models.AssemblyInfo.cs
+D:\Desktop\Market\Models\obj\Debug\netcoreapp2.2\Models.dll
+D:\Desktop\Market\Models\obj\Debug\netcoreapp2.2\Models.pdb

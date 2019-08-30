@@ -14,3 +14,9 @@ C:\Users\User\Desktop\Market\Service\obj\Debug\netcoreapp2.2\Service.AssemblyInf
 C:\Users\User\Desktop\Market\Service\obj\Debug\netcoreapp2.2\Service.csproj.CopyComplete
 C:\Users\User\Desktop\Market\Service\obj\Debug\netcoreapp2.2\Service.dll
 C:\Users\User\Desktop\Market\Service\obj\Debug\netcoreapp2.2\Service.pdb
+D:\Desktop\Market\Service\obj\Debug\netcoreapp2.2\Service.csprojAssemblyReference.cache
+D:\Desktop\Market\Service\obj\Debug\netcoreapp2.2\Service.csproj.CoreCompileInputs.cache
+D:\Desktop\Market\Service\obj\Debug\netcoreapp2.2\Service.AssemblyInfoInputs.cache
+D:\Desktop\Market\Service\obj\Debug\netcoreapp2.2\Service.AssemblyInfo.cs
+D:\Desktop\Market\Service\obj\Debug\netcoreapp2.2\Service.dll
+D:\Desktop\Market\Service\obj\Debug\netcoreapp2.2\Service.pdb

@@ -47,6 +47,7 @@ export class CartComponent implements OnInit {
       this.apiService.getCurrentCustomer()
       .toPromise()
       .then((res: any) => {
+        console.log(res)
         if (res != null)
           this.apiService.applyOrder()
         else

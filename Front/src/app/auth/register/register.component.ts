@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 import { Router } from '@angular/router';
-import { CreateUserResult, GetJwtResult } from 'src/app/models/results';
+import { OperationResult } from 'src/app/models/operationResult';
 
 @Component({
   selector: 'app-register',
@@ -22,22 +22,21 @@ export class RegisterComponent implements OnInit {
     if (form.valid) {
       this.apiService.register(form.value)
         .toPromise()
-        .then((res: CreateUserResult) => {
-          if (res.success) {
+        .then((res: OperationResult) => {
+          if (res.succeeded) {
             this.apiService.makeAlert("Вы успешно зарегистрировались!");
             this.apiService.login(form.value)
               .toPromise()
-              .then((res: GetJwtResult) => {
-                localStorage.setItem('token', res.token);
+              .then((res: OperationResult) => {
+                localStorage.setItem('token', String(res.data));
                 this.closeModal.nativeElement.click()
                 form.reset()
                 this.apiService.logInText = "Выход"
               }
               )
           }
-          if (res.isAlreadyExist) {
-            this.message = res.message
-          }
+          else
+          this.message = res.message
         })
     }
     else {
