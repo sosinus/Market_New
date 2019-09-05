@@ -37,10 +37,7 @@ namespace Market.Controllers
 		[Authorize(Roles = "Manager")]
 		public IActionResult DeleteItem(int id)
 		{
-			var result = _itemService.DeleteItem(id);
-			string imgPath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Images", id.ToString());
-			if (Directory.Exists(imgPath))
-				Directory.Delete(imgPath, true);
+			var result = _itemService.DeleteItem(id);			
 			return Ok(result);
 		}
 

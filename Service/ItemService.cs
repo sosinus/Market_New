@@ -52,7 +52,10 @@ namespace Service
 				var item = _unitOfWork.ItemRepository.All().Single(i => i.Id == id);
 				_unitOfWork.ItemRepository.Delete(item);
 				_unitOfWork.Commit();
-				return new OperationResult { Succeeded = true };
+                string imgPath = Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Images", id.ToString());
+                if (Directory.Exists(imgPath))
+                    Directory.Delete(imgPath, true);
+                return new OperationResult { Succeeded = true };
 			}
 			catch (Exception ex)
 			{

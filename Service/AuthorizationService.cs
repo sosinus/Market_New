@@ -15,14 +15,12 @@ namespace Service
 {
 	public class AuthService : IAuthService
 	{
-		private readonly IUnitOfWork _unitOfWork;
-		private readonly UserManager<AppUser> _userManager;
+		private readonly IUnitOfWork _unitOfWork;		
 		private readonly ApplicationSettings _appSettings;
 
 		public AuthService(IUnitOfWork unitOfWork, UserManager<AppUser> userManager, IOptions<ApplicationSettings> applicationSettings)
 		{
-			_unitOfWork = unitOfWork;
-			_userManager = userManager;
+			_unitOfWork = unitOfWork;			
 			_appSettings = applicationSettings.Value;
 		}
 
@@ -33,11 +31,11 @@ namespace Service
 				.Where(x => x.UserName == loginModel.UserName)
 				.Single();
 
-			var isPasswordValid = _userManager.CheckPasswordAsync(user, loginModel.Password).Result;
+			var isPasswordValid = _unitOfWork.UserManager.CheckPasswordAsync(user, loginModel.Password).Result;
 
 			if (!isPasswordValid) return new OperationResult { Succeeded = false };
 
-			var role = _userManager.GetRolesAsync(user).Result.FirstOrDefault();
+			var role = _unitOfWork.UserManager.GetRolesAsync(user).Result.FirstOrDefault();
 
 			IdentityOptions _options = new IdentityOptions();
 			var tokenDescriptor = new SecurityTokenDescriptor
